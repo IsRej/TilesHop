@@ -10,17 +10,10 @@ public class Platform : MonoBehaviour
 	public bool _canSpawnCollectives;
 	public Material _oldMat;
 	public Material _newMat;
-/*
-	public Transform jumpEffect;
-
-	public GameObject diamond;*/
 
 	void Awake()
 	{
 		this._spheremovement = FindObjectOfType<SphereMovement>();
-		//jumpEffect.transform.localScale = Vector3.zero;
-		//jumpEffect.gameObject.SetActive(false);
-		//diamond.SetActive(false);
 	}
 
 	void Start()
@@ -41,10 +34,7 @@ public class Platform : MonoBehaviour
 		_collidedObj.Play();
 		transform.DOMoveY(0f,0.15f).OnComplete(() => transform.DOMoveY(0.3f,0.15f));
 		GetComponent<MeshRenderer>().material = _newMat;
-		//jumpEffect.transform.localScale = Vector3.zero;
-		//jumpEffect.gameObject.SetActive(true);
 
-		//jumpEffect.DOScale(new Vector3(3f, 0.3f, 3f), 0.2f).SetLoops(2, LoopType.Yoyo);
 	}
 
 	IEnumerator CoroutDestroyIfNotVisible()

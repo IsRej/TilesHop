@@ -9,7 +9,7 @@ public class SphereMovement : MonoBehaviour
     public float swipeSensibility = 7f;
     public float speedBounceInSeconds = 0.3f;
     public float posZTarget;
-    public float posXmax = 3f; //-2.5f;
+    public float posXmax = 3f;
 
     public bool _gameStarted;
     public bool _isGameOver;
@@ -119,7 +119,7 @@ public class SphereMovement : MonoBehaviour
 
         if (speedBounceInSeconds < 0.15f)
             speedBounceInSeconds = 0.15f;
-        Ease playerAnimEase = Ease.OutCubic; //SetEase(Ease.OutQuad);
+        Ease playerAnimEase = Ease.OutCubic;
 
         transform.DOMoveY(2.5f, speedBounceInSeconds).SetLoops(2, LoopType.Yoyo).SetEase(playerAnimEase);
 
